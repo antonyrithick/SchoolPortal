@@ -11,6 +11,7 @@ import AttendancePage from '@/pages/AttendancePage';
 import ExamsPage from '@/pages/ExamsPage';
 import FeesPage from '@/pages/FeesPage';
 import AnnouncementsPage from '@/pages/AnnouncementsPage';
+import ReportCardPage from '@/pages/ReportCardPage';
 import ProtectedRoute from '@/components/layout/ProtectedRoute';
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
           <Route path="attendance" element={<AttendancePage />} />
           <Route path="exams" element={<ExamsPage />} />
           <Route path="fees" element={<FeesPage />} />
+          <Route path="reports" element={<ReportCardPage />} />
           <Route path="announcements" element={<AnnouncementsPage />} />
         </Route>
 
@@ -36,12 +38,14 @@ function App() {
           <Route index element={<TeacherDashboard />} />
           <Route path="attendance" element={<AttendancePage />} />
           <Route path="exams" element={<ExamsPage />} />
+          <Route path="reports" element={<ReportCardPage />} />
           <Route path="announcements" element={<AnnouncementsPage />} />
         </Route>
 
         {/* Parent Routes */}
         <Route path="/parent" element={<ProtectedRoute allowedRoles={['parent']} />}>
           <Route index element={<ParentDashboard />} />
+          <Route path="reports" element={<ReportCardPage />} />
         </Route>
 
         <Route path="/" element={<Navigate to="/login" replace />} />

@@ -8,7 +8,8 @@ import {
   ClipboardList, 
   FileText, 
   DollarSign, 
-  Bell 
+  Bell,
+  Award 
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -24,6 +25,7 @@ export default function Sidebar() {
     { to: '/admin/attendance', icon: UserCheck, label: 'Attendance' },
     { to: '/admin/exams', icon: ClipboardList, label: 'Exams' },
     { to: '/admin/fees', icon: DollarSign, label: 'Fees' },
+    { to: '/admin/reports', icon: Award, label: 'Report Cards' },
     { to: '/admin/announcements', icon: Bell, label: 'Announcements' },
   ];
 
@@ -31,11 +33,13 @@ export default function Sidebar() {
     { to: '/teacher', icon: LayoutDashboard, label: 'Dashboard' },
     { to: '/teacher/attendance', icon: UserCheck, label: 'Attendance' },
     { to: '/teacher/exams', icon: ClipboardList, label: 'Exams' },
+    { to: '/teacher/reports', icon: Award, label: 'Report Cards' },
     { to: '/teacher/announcements', icon: Bell, label: 'Announcements' },
   ];
 
   const parentLinks = [
     { to: '/parent', icon: LayoutDashboard, label: 'Dashboard' },
+    { to: '/parent/reports', icon: Award, label: 'Report Cards' },
   ];
 
   const links = user?.role === 'admin' 
